@@ -1,3 +1,33 @@
+function mostramatriu (num: number) {
+    strip.setBrightness(30)
+    if (num == 1) {
+        for (let índex = 0; índex <= organica.length - 1; índex++) {
+            strip.setPixelColor(organica[índex], neopixel.colors(NeoPixelColors.Purple))
+        }
+    } else if (num == 2) {
+        for (let índex2 = 0; índex2 <= paper.length - 1; índex2++) {
+            strip.setPixelColor(paper[índex2], neopixel.colors(NeoPixelColors.Blue))
+        }
+    } else if (num == 3) {
+        for (let índex3 = 0; índex3 <= plastic.length - 1; índex3++) {
+            strip.setPixelColor(plastic[índex3], neopixel.colors(NeoPixelColors.Yellow))
+        }
+    } else if (num == 4) {
+        for (let índex4 = 0; índex4 <= residu.length - 1; índex4++) {
+            strip.setPixelColor(residu[índex4], neopixel.colors(NeoPixelColors.White))
+        }
+    } else if (num == 5) {
+        for (let índex5 = 0; índex5 <= vidre.length - 1; índex5++) {
+            strip.setPixelColor(vidre[índex5], neopixel.colors(NeoPixelColors.Green))
+        }
+    } else {
+        strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    }
+    strip.show()
+}
+input.onButtonPressed(Button.A, function () {
+	
+})
 function defineixmatriu () {
     plastic = [
     0,
@@ -86,94 +116,6 @@ function defineixmatriu () {
     239,
     240,
     247
-    ]
-    resta = [
-    8,
-    9,
-    10,
-    11,
-    12,
-    13,
-    14,
-    15,
-    16,
-    20,
-    27,
-    31,
-    32,
-    36,
-    37,
-    40,
-    41,
-    44,
-    45,
-    46,
-    56,
-    57,
-    58,
-    59,
-    60,
-    61,
-    62,
-    63,
-    64,
-    67,
-    71,
-    72,
-    76,
-    79,
-    80,
-    83,
-    87,
-    88,
-    95,
-    105,
-    108,
-    109,
-    110,
-    112,
-    115,
-    119,
-    120,
-    124,
-    127,
-    128,
-    131,
-    135,
-    137,
-    138,
-    139,
-    142,
-    159,
-    160,
-    168,
-    169,
-    170,
-    171,
-    172,
-    173,
-    174,
-    175,
-    176,
-    191,
-    200,
-    201,
-    202,
-    203,
-    204,
-    205,
-    209,
-    212,
-    219,
-    223,
-    225,
-    228,
-    232,
-    233,
-    234,
-    235,
-    236,
-    237
     ]
     paper = [
     8,
@@ -461,25 +403,116 @@ function defineixmatriu () {
     211,
     215
     ]
-    strip = neopixel.create(DigitalPin.P0, 256, NeoPixelMode.RGB)
+    residu = [
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    27,
+    31,
+    32,
+    36,
+    43,
+    47,
+    49,
+    50,
+    51,
+    53,
+    54,
+    55,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72,
+    76,
+    79,
+    80,
+    83,
+    87,
+    88,
+    95,
+    104,
+    109,
+    110,
+    112,
+    115,
+    119,
+    120,
+    124,
+    127,
+    128,
+    132,
+    133,
+    134,
+    144,
+    145,
+    146,
+    147,
+    148,
+    149,
+    150,
+    151,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    175,
+    176,
+    183,
+    185,
+    190,
+    194,
+    195,
+    196,
+    197,
+    208,
+    209,
+    210,
+    211,
+    212,
+    213,
+    214,
+    216,
+    231,
+    233,
+    234,
+    235,
+    236,
+    237,
+    238,
+    239
+    ]
 }
 let vidre: number[] = []
-let organica: number[] = []
-let paper: number[] = []
-let resta: number[] = []
+let residu: number[] = []
 let plastic: number[] = []
+let paper: number[] = []
+let organica: number[] = []
 let strip: neopixel.Strip = null
-defineixmatriu()
 strip = neopixel.create(DigitalPin.P12, 256, NeoPixelMode.RGB)
+strip.showColor(neopixel.colors(NeoPixelColors.Black))
+defineixmatriu()
+makerbit.connectSerialMp3(DigitalPin.P8, DigitalPin.P7)
 basic.forever(function () {
-    for (let índex = 0; índex <= organica.length; índex++) {
-        strip.setPixelColor(organica[índex], neopixel.colors(NeoPixelColors.Purple))
+    makerbit.playMp3Track(10, 2)
+    makerbit.playMp3Track(randint(2, 10), 1)
+    for (let índex6 = 0; índex6 <= 5; índex6++) {
+        mostramatriu(índex6)
+        basic.pause(2000)
+        strip.showColor(neopixel.colors(NeoPixelColors.Black))
     }
-    strip.show()
-    basic.pause(1000)
-    for (let índex = 0; índex <= plastic.length; índex++) {
-        strip.setPixelColor(plastic[índex], neopixel.colors(NeoPixelColors.Yellow))
-    }
-    strip.show()
-    basic.pause(1000)
 })

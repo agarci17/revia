@@ -5,7 +5,8 @@
         "core": "*",
         "radio": "*",
         "microphone": "*",
-        "microshield": "github:makeandlearn/pxt-microshield#v1.0.2"
+        "microshield": "github:makeandlearn/pxt-microshield#v1.0.2",
+        "MakerBit-MP3": "github:1010technologies/pxt-makerbit-mp3#v1.0.10"
     },
     "files": [
         "main.blocks",
