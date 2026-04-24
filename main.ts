@@ -26,7 +26,36 @@ function mostramatriu (num: number) {
     strip.show()
 }
 input.onButtonPressed(Button.A, function () {
-	
+    mostramatriu(5)
+    makerbit.playMp3Track(1, 1)
+    makerbit.playMp3Track(randint(7, 10), 2)
+    microshield.Servo(microshield.Servos.S0, 0)
+    basic.pause(5000)
+    strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    mostramatriu(3)
+    makerbit.playMp3Track(2, 1)
+    makerbit.playMp3Track(randint(7, 10), 2)
+    microshield.Servo(microshield.Servos.S0, 40)
+    basic.pause(5000)
+    strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    mostramatriu(1)
+    makerbit.playMp3Track(3, 1)
+    makerbit.playMp3Track(randint(7, 10), 2)
+    microshield.Servo(microshield.Servos.S0, 80)
+    basic.pause(5000)
+    strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    mostramatriu(2)
+    makerbit.playMp3Track(4, 1)
+    makerbit.playMp3Track(randint(7, 10), 2)
+    microshield.Servo(microshield.Servos.S0, 120)
+    basic.pause(5000)
+    strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    mostramatriu(4)
+    makerbit.playMp3Track(5, 1)
+    makerbit.playMp3Track(randint(7, 10), 2)
+    microshield.Servo(microshield.Servos.S0, 160)
+    basic.pause(5000)
+    strip.showColor(neopixel.colors(NeoPixelColors.Black))
 })
 function defineixmatriu () {
     plastic = [
@@ -508,11 +537,5 @@ strip.showColor(neopixel.colors(NeoPixelColors.Black))
 defineixmatriu()
 makerbit.connectSerialMp3(DigitalPin.P8, DigitalPin.P7)
 basic.forever(function () {
-    makerbit.playMp3Track(10, 2)
-    makerbit.playMp3Track(randint(2, 10), 1)
-    for (let índex6 = 0; índex6 <= 5; índex6++) {
-        mostramatriu(índex6)
-        basic.pause(2000)
-        strip.showColor(neopixel.colors(NeoPixelColors.Black))
-    }
+	
 })
