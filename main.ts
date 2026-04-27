@@ -25,9 +25,6 @@ function mostramatriu (num: number) {
     }
     strip.show()
 }
-input.onButtonPressed(Button.A, function () {
-	
-})
 function defineixmatriu () {
     plastic = [
     0,
