@@ -13,8 +13,8 @@ function mostramatriu (num: number) {
             strip.setPixelColor(plastic[índex3], neopixel.colors(NeoPixelColors.Yellow))
         }
     } else if (num == 4) {
-        for (let índex4 = 0; índex4 <= residu.length - 1; índex4++) {
-            strip.setPixelColor(residu[índex4], neopixel.colors(NeoPixelColors.White))
+        for (let índex4 = 0; índex4 <= rebuig.length - 1; índex4++) {
+            strip.setPixelColor(rebuig[índex4], neopixel.colors(NeoPixelColors.White))
         }
     } else if (num == 5) {
         for (let índex5 = 0; índex5 <= vidre.length - 1; índex5++) {
@@ -400,7 +400,7 @@ function defineixmatriu () {
     211,
     215
     ]
-    residu = [
+    rebuig = [
     16,
     17,
     18,
@@ -438,15 +438,21 @@ function defineixmatriu () {
     88,
     95,
     104,
+    105,
+    106,
+    107,
+    108,
     109,
     110,
+    111,
     112,
     115,
     119,
     120,
     124,
     127,
-    128,
+    129,
+    130,
     132,
     133,
     134,
@@ -457,26 +463,24 @@ function defineixmatriu () {
     148,
     149,
     150,
-    151,
-    160,
-    161,
-    162,
-    163,
-    164,
-    165,
-    166,
+    152,
     167,
     168,
-    175,
     176,
-    183,
-    185,
-    190,
+    177,
+    178,
+    179,
+    180,
+    181,
+    182,
+    192,
+    193,
     194,
     195,
     196,
     197,
-    208,
+    198,
+    199,
     209,
     210,
     211,
@@ -484,14 +488,16 @@ function defineixmatriu () {
     213,
     214,
     216,
+    223,
+    224,
     231,
-    233,
-    234,
+    232,
     235,
-    236,
-    237,
-    238,
-    239
+    239,
+    241,
+    244,
+    245,
+    246
     ]
 }
 function obre_rampa () {
@@ -502,7 +508,7 @@ function obre_rampa () {
     microshield.Servo(microshield.Servos.S0, 0)
 }
 let vidre: number[] = []
-let residu: number[] = []
+let rebuig: number[] = []
 let plastic: number[] = []
 let paper: number[] = []
 let organica: number[] = []
