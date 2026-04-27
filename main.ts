@@ -532,10 +532,14 @@ let plastic: number[] = []
 let paper: number[] = []
 let organica: number[] = []
 let strip: neopixel.Strip = null
+PlanetX_AILens.initModule()
 strip = neopixel.create(DigitalPin.P12, 256, NeoPixelMode.RGB)
 strip.showColor(neopixel.colors(NeoPixelColors.Black))
 defineixmatriu()
 makerbit.connectSerialMp3(DigitalPin.P8, DigitalPin.P7)
+PlanetX_AILens.switchfunc(PlanetX_AILens.FuncList.Things)
 basic.forever(function () {
-	
+    if (PlanetX_AILens.objectCheck(PlanetX_AILens.learnID.ID1) && false) {
+    	
+    }
 })
