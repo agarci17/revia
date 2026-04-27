@@ -26,36 +26,7 @@ function mostramatriu (num: number) {
     strip.show()
 }
 input.onButtonPressed(Button.A, function () {
-    mostramatriu(5)
-    makerbit.playMp3Track(1, 1)
-    makerbit.playMp3Track(randint(7, 10), 2)
-    microshield.Servo(microshield.Servos.S0, 0)
-    basic.pause(5000)
-    strip.showColor(neopixel.colors(NeoPixelColors.Black))
-    mostramatriu(3)
-    makerbit.playMp3Track(2, 1)
-    makerbit.playMp3Track(randint(7, 10), 2)
-    microshield.Servo(microshield.Servos.S0, 40)
-    basic.pause(5000)
-    strip.showColor(neopixel.colors(NeoPixelColors.Black))
-    mostramatriu(1)
-    makerbit.playMp3Track(3, 1)
-    makerbit.playMp3Track(randint(7, 10), 2)
-    microshield.Servo(microshield.Servos.S0, 80)
-    basic.pause(5000)
-    strip.showColor(neopixel.colors(NeoPixelColors.Black))
-    mostramatriu(2)
-    makerbit.playMp3Track(4, 1)
-    makerbit.playMp3Track(randint(7, 10), 2)
-    microshield.Servo(microshield.Servos.S0, 120)
-    basic.pause(5000)
-    strip.showColor(neopixel.colors(NeoPixelColors.Black))
-    mostramatriu(4)
-    makerbit.playMp3Track(5, 1)
-    makerbit.playMp3Track(randint(7, 10), 2)
-    microshield.Servo(microshield.Servos.S0, 160)
-    basic.pause(5000)
-    strip.showColor(neopixel.colors(NeoPixelColors.Black))
+	
 })
 function defineixmatriu () {
     plastic = [
@@ -526,16 +497,44 @@ function defineixmatriu () {
     239
     ]
 }
+function obre_rampa () {
+    microshield.Servo(microshield.Servos.S0, 0)
+    basic.pause(200)
+    microshield.Servo(microshield.Servos.S0, 90)
+    basic.pause(200)
+    microshield.Servo(microshield.Servos.S0, 0)
+}
 let vidre: number[] = []
 let residu: number[] = []
 let plastic: number[] = []
 let paper: number[] = []
 let organica: number[] = []
 let strip: neopixel.Strip = null
+PlanetX_AILens.initModule()
 strip = neopixel.create(DigitalPin.P12, 256, NeoPixelMode.RGB)
 strip.showColor(neopixel.colors(NeoPixelColors.Black))
 defineixmatriu()
 makerbit.connectSerialMp3(DigitalPin.P8, DigitalPin.P7)
+PlanetX_AILens.switchfunc(PlanetX_AILens.FuncList.Things)
 basic.forever(function () {
-	
+    if (PlanetX_AILens.objectCheck(PlanetX_AILens.learnID.ID2) && PlanetX_AILens.objectConfidence(PlanetX_AILens.learnID.ID2) > 85) {
+        mostramatriu(1)
+        makerbit.playMp3Track(1, 1)
+        microshield.Servo(microshield.Servos.S1, 0)
+        basic.pause(1000)
+        makerbit.playMp3Track(randint(7, 10), 2)
+        obre_rampa()
+        basic.pause(4000)
+        strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    }
+    if (PlanetX_AILens.objectCheck(PlanetX_AILens.learnID.ID1) && PlanetX_AILens.objectConfidence(PlanetX_AILens.learnID.ID1) > 85) {
+        mostramatriu(1)
+        makerbit.playMp3Track(1, 1)
+        microshield.Servo(microshield.Servos.S1, 0)
+        basic.pause(1000)
+        makerbit.playMp3Track(randint(7, 10), 2)
+        obre_rampa()
+        basic.pause(4000)
+        strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    }
 })
