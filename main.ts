@@ -516,18 +516,49 @@ strip.showColor(neopixel.colors(NeoPixelColors.Black))
 defineixmatriu()
 makerbit.connectSerialMp3(DigitalPin.P8, DigitalPin.P7)
 PlanetX_AILens.switchfunc(PlanetX_AILens.FuncList.Things)
+let fiabilitat = 85
 basic.forever(function () {
-    if (PlanetX_AILens.objectCheck(PlanetX_AILens.learnID.ID2) && PlanetX_AILens.objectConfidence(PlanetX_AILens.learnID.ID2) > 85) {
-        mostramatriu(1)
-        makerbit.playMp3Track(1, 1)
-        microshield.Servo(microshield.Servos.S1, 0)
+    if (PlanetX_AILens.objectCheck(PlanetX_AILens.learnID.ID5) && PlanetX_AILens.objectConfidence(PlanetX_AILens.learnID.ID5) > fiabilitat) {
+        mostramatriu(5)
+        makerbit.playMp3Track(5, 1)
+        microshield.Servo(microshield.Servos.S1, 160)
         basic.pause(1000)
         makerbit.playMp3Track(randint(7, 10), 2)
         obre_rampa()
         basic.pause(4000)
         strip.showColor(neopixel.colors(NeoPixelColors.Black))
     }
-    if (PlanetX_AILens.objectCheck(PlanetX_AILens.learnID.ID1) && PlanetX_AILens.objectConfidence(PlanetX_AILens.learnID.ID1) > 85) {
+    if (PlanetX_AILens.objectCheck(PlanetX_AILens.learnID.ID4) && PlanetX_AILens.objectConfidence(PlanetX_AILens.learnID.ID4) > fiabilitat) {
+        mostramatriu(4)
+        makerbit.playMp3Track(4, 1)
+        microshield.Servo(microshield.Servos.S1, 120)
+        basic.pause(1000)
+        makerbit.playMp3Track(randint(7, 10), 2)
+        obre_rampa()
+        basic.pause(4000)
+        strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    }
+    if (PlanetX_AILens.objectCheck(PlanetX_AILens.learnID.ID3) && PlanetX_AILens.objectConfidence(PlanetX_AILens.learnID.ID3) > fiabilitat) {
+        mostramatriu(3)
+        makerbit.playMp3Track(3, 1)
+        microshield.Servo(microshield.Servos.S1, 80)
+        basic.pause(1000)
+        makerbit.playMp3Track(randint(7, 10), 2)
+        obre_rampa()
+        basic.pause(4000)
+        strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    }
+    if (PlanetX_AILens.objectCheck(PlanetX_AILens.learnID.ID2) && PlanetX_AILens.objectConfidence(PlanetX_AILens.learnID.ID2) > fiabilitat) {
+        mostramatriu(2)
+        makerbit.playMp3Track(2, 1)
+        microshield.Servo(microshield.Servos.S1, 40)
+        basic.pause(1000)
+        makerbit.playMp3Track(randint(7, 10), 2)
+        obre_rampa()
+        basic.pause(4000)
+        strip.showColor(neopixel.colors(NeoPixelColors.Black))
+    }
+    if (PlanetX_AILens.objectCheck(PlanetX_AILens.learnID.ID1) && PlanetX_AILens.objectConfidence(PlanetX_AILens.learnID.ID1) > fiabilitat) {
         mostramatriu(1)
         makerbit.playMp3Track(1, 1)
         microshield.Servo(microshield.Servos.S1, 0)
